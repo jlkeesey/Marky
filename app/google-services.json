@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "460190789214",
+    "firebase_url": "https://marky-6f891.firebaseio.com",
+    "project_id": "marky-6f891",
+    "storage_bucket": "marky-6f891.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460190789214:android:c8f1c02720547de2",
+        "android_client_info": {
+          "package_name": "pub.carkeys.marky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460190789214-sbnr70ibakfikign4ggmts4nkh84l5lu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pub.carkeys.marky",
+            "certificate_hash": "ec0b6480de4ee4a420fe1976a433729628d36224"
+          }
+        },
+        {
+          "client_id": "460190789214-lat6t43l7mfc1r2ckiuei9i88kfqjao5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9kpZzT_odx3V0eDvNYozXYyaDBmPF7hI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460190789214-lat6t43l7mfc1r2ckiuei9i88kfqjao5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
