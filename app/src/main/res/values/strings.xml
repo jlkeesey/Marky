@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">Marky</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Marky</string>
+
     <!-- Twitter consumer key and secret -->
     <string name="twitter_consumer_key" translatable="false">cthXwjSr9bpiEFXns0m8jInZE</string>
     <string name="twitter_consumer_secret" translatable="false">2T2k4q2bhWhMOEnbyRsC01bfrkAq0Xh0mzmRvSzOq6lCHYuRlp</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
