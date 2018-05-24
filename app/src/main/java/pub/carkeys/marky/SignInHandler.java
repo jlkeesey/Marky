@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2018 by James Keesey. All rights reserved.
+ */
 package pub.carkeys.marky;
 
 import android.app.Activity;
@@ -32,8 +35,7 @@ public final class SignInHandler {
   }
 
   @SuppressWarnings("WeakerAccess")
-  public SignInHandler(final Activity activity,
-                       @NonNull Collection<? extends AuthUI.IdpConfig> providers) {
+  public SignInHandler(final Activity activity, @NonNull Collection<? extends AuthUI.IdpConfig> providers) {
     this.activity = activity;
     this.providers.addAll(providers);
   }

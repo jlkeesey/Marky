@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2018 by James Keesey. All rights reserved.
+ */
 package pub.carkeys.marky;
 
 import android.content.Context;
@@ -7,7 +10,7 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -16,11 +19,11 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
+  @Test
+  public void useAppContext() {
+    // Context of the app under test.
+    Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("pub.carkeys.marky", appContext.getPackageName());
-    }
+    assertEquals("pub.carkeys.marky", appContext.getPackageName());
+  }
 }
