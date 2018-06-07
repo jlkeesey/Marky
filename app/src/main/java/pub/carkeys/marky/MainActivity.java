@@ -7,11 +7,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +23,9 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements SignInHandler.SignInCallback {
   private SignInHandler signInHandler;
-  private ImageView mugshot;
   private TextView displayName;
+  private LocationServiceController locationServiceController = new LocationServiceController(this);
+  private CoordinatorLayout coordinatorLayout;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,10 @@ public class MainActivity extends AppCompatActivity implements SignInHandler.Sig
     signInHandler = new SignInHandler(this);
 
     setContentView(R.layout.activity_main);
+    coordinatorLayout = findViewById(R.id.coordinatorLayout);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-//    mugshot = findViewById(R.id.mugshot_f);
     displayName = findViewById(R.id.display_name);
 
     FloatingActionButton fab = findViewById(R.id.fab);
@@ -51,13 +52,19 @@ public class MainActivity extends AppCompatActivity implements SignInHandler.Sig
         }
       }
     });
+    locationServiceController.startService(coordinatorLayout);
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    locationServiceController.stopService();
   }
 
   @Override
   protected void onResume() {
     super.onResume();
     displayName.setText(getUserName());
-//    Picasso.get().load(getUserImage()).noPlaceholder().fit().into(mugshot);
     SimpleDraweeView draweeView = findViewById(R.id.mugshot_f);
     draweeView.setImageURI(getUserImage());
   }
@@ -75,6 +82,13 @@ public class MainActivity extends AppCompatActivity implements SignInHandler.Sig
   public void onStart() {
     super.onStart();
     showUserName();
+    locationServiceController.bindService();
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
+    locationServiceController.unbindService();
   }
 
   private void showUserName() {
